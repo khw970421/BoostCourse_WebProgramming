@@ -29,21 +29,44 @@ public class Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<head><title>form</title></head>");
         out.println("<body><h1>doget방식</h1>");
-
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+        out.println("이름 : " + name + "<br>");
+        out.println("나이 : " + age + "<br>");
+        out.println("<br>");
+        out.println("<br>");
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while(headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            String headerValue = request.getHeader(headerName);
+            out.println(headerName + " : " + headerValue + " <br> ");
+        }
         out.println("</body>");
         out.println("</html>");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html; charset=utf-8");
         PrintWriter out = response.getWriter();
         out.println("<html><head></head><body>");
         out.println("<h1> doPost방식</h1>");
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+        out.println("이름 : " + name + "<br>");
+        out.println("나이 : " + age + "<br>");
+        out.println("<br>");
+        out.println("<br>");
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while(headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            String headerValue = request.getHeader(headerName);
+            out.println(headerName + " : " + headerValue + " <br> ");
+        }
         out.println("</body></html>");
     }
 

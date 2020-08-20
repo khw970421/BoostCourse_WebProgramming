@@ -9,14 +9,17 @@
 <html>
   <head>
     <title>$Title$</title>
+    <meta charset="UTF-8">
   </head>
   <body>
   <form action = "SE" method="get">
-    <input type ="text" name="name"><br><br>
-    <input type ="password" name="pw"><br><br>
+    <input type ="text" name="name" placeholder="get방식"><br><br>
+    <input type ="password" name="age"><br><br>
     <input type ="submit" value="get방식"><br><br>
   </form>
   <form action="SE" method="post">
+    <input type ="text" name="name" placeholder="post방식"><br><br>
+    <input type ="password" name="age"><br><br>
     <input type="submit" value="post방식">
   </form>
   </body>
